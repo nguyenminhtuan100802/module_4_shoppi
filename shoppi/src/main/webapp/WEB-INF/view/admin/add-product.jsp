@@ -85,8 +85,8 @@
 
             <!-- Button Container -->
             <div class="button-container">
-                <button type="submit" class="btn btn-primary">Save</button>
-                <a href="/admin/home" class="btn btn-secondary">Cancel</a>
+                <button type="submit" class="btn btn-primary">Saves</button>
+                <a href="/admin/home" class="btn btn-secondary">Cancelaaaa</a>
             </div>
 
         </form>
