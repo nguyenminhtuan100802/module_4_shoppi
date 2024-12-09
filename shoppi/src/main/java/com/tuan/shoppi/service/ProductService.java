@@ -15,11 +15,10 @@ public class ProductService {
         this.productRepository = productRepository;
     }
 
-    List<Product> findAll() {
+    public List<Product> findAll() {
         return productRepository.findAll();
     }
-    List<Product> findByNameContainingIgnoreCase(String name) {
+    public List<Product> findByNameContainingIgnoreCase(String name) {
         return productRepository.findByNameContainingIgnoreCase(name);
     }
-    private Set<Product> findByCategory(Category category) {}
 }
