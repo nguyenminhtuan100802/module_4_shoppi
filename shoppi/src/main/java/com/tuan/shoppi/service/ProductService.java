@@ -5,6 +5,7 @@ import com.tuan.shoppi.repository.ProductRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.Set;
 
 @Service
@@ -18,7 +19,19 @@ public class ProductService {
     public List<Product> findAll() {
         return productRepository.findAll();
     }
+
+    public Optional<Product> findById(int id) {
+        return productRepository.findById(id);
+    }
     public List<Product> findByNameContainingIgnoreCase(String name) {
         return productRepository.findByNameContainingIgnoreCase(name);
     }
+
+    public Product save ( Product product) {
+        return productRepository.save(product);
+    }
+
+    public void deleteById(int id) {productRepository.deleteById(id);}
+
+
 }
