@@ -1,20 +1,20 @@
 package com.tuan.shoppi.service;
 
-
 import com.tuan.shoppi.entity.Product;
 import com.tuan.shoppi.repository.ProductRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 
 @Service
 public class ProductService {
-
-
-    @Autowired
     private ProductRepository productRepository;
+
+    public ProductService(ProductRepository productRepository) {
+        this.productRepository = productRepository;
+    }
 
     public List<Product> findAll() {
         return productRepository.findAll();
@@ -22,6 +22,9 @@ public class ProductService {
 
     public Optional<Product> findById(int id) {
         return productRepository.findById(id);
+    }
+    public List<Product> findByNameContainingIgnoreCase(String name) {
+        return productRepository.findByNameContainingIgnoreCase(name);
     }
 
     public Product save ( Product product) {
